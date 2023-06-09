@@ -1,9 +1,3 @@
-## Table of contents
-* [Technology] (#technology)
-* [Packages] (#packages)
-* [Formatting] (#formatting)
-* [React.js src directory] (#react.js-src-directory)
-
 ## Technology
 * Node version: #^18.16.0
 * React version: ^18.2.0
