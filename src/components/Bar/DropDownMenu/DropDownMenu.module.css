@@ -1,11 +1,18 @@
-.DropDownContainer {
+.DropDownContainer__Visibility {
+    visibility: visible;
     padding: 100px 50px 30px 30px;;
     width: auto;
     height: 300px;
     border-radius: 0px 0px 5px 5px;
     background-color: rgb(19, 19, 57);
-    opacity: 85%;
+    opacity: 90%;
     cursor: pointer;
+    z-index: 10px;
+}
+
+.DropDownContainer__Hidden {
+    visibility: hidden;
+    height: 430px;
 }
 
 .DropDownItem {

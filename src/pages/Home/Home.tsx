@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import classes from './Home.module.css';
 import MainContainer from '../../components/MainContainer/MainContainer';
 import Bar from '../../components/Bar/Bar';
 import DropDownMenu from '../../components/Bar/DropDownMenu/DropDownMenu';
@@ -9,12 +10,12 @@ const Home: React.FC = () => {
     const { dropDown } = useDropDownContext();
 
     return (
-        <div>
+        <div className={classes.MainPhoto}>
             <Bar />
-            {dropDown.display 
-            ? <DropDownMenu 
-                data={dropDown.array} /> 
-            : ''}
+            <DropDownMenu 
+                data={dropDown.array}
+                visibility={dropDown.display} 
+            /> 
             <MainContainer />
         </div>
     );
