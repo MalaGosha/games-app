@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './DropDownMenu.module.css';
+import { useGamesContext } from '../../../context/GamesContext';
 
 type DropDownMenuProps = {
     data: string[];
@@ -7,6 +8,7 @@ type DropDownMenuProps = {
 }
 
 const DropDownMenu: React.FC<DropDownMenuProps> = (props: DropDownMenuProps) => {
+const { games } = useGamesContext();
 
     return (
         <div 
@@ -18,6 +20,18 @@ const DropDownMenu: React.FC<DropDownMenuProps> = (props: DropDownMenuProps) => 
                 return (
                     <div className={classes.DropDownItem} key={index}>
                         {item}
+                    </div>
+                )
+            })}
+            {games.map((item, index) => {
+                return (
+                    <div className={classes.DropDownItem} key={index}>
+                        {item.title}
+                        {item.description}
+                        {item.keyImages.map((image, index) => {
+                            return ( <img src={image.url} alt='' key={index}/>)
+                        })}
+
                     </div>
                 )
             })}
