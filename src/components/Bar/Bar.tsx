@@ -8,7 +8,7 @@ import Login from './Login/Login';
 const Bar: React.FC = () => {
     return (
         <div className={classes.Bar}>
-            <Link to="/main-page">
+            <Link to="/">
                 <div className={classes.LogoContainer}>
                     <img src={logo} alt="logo" className={classes.Logo} />
                 </div>

@@ -7,7 +7,7 @@ const PageNotFound: React.FC = () => {
     return (
         <div>
             Paige not found
-            <Link to="/main-page">
+            <Link to="/">
                 <button className={classes.Btn__ReturnToMainPaige}>
                     Return to main paige
                 </button>
