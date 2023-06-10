@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import classes from './NavigationButton.module.css';
-import DropDownMenu from '../DropDownMenu/DropDownMenu';
-import { arrayNewGames, arrayTopGames } from '../../../utils/itemsToDropDown';
+import { arrayFreeGames, arrayNewGames, arrayTopGames } from '../../../utils/itemsToDropDown';
 import { useDropDownContext } from '../../../context/DropDownContext';
+import { NavigationMenu } from '../../../utils/NavigationMenuEnum';
 
 type NavigationButtonProps = {
     nameButton: string;
 };
 
-const NavigationButton: React.FC<NavigationButtonProps> = (
-    props: NavigationButtonProps
-) => {
-    const [arrayToDropDown, setArrayToDropDown] =
-        useState<string[]>(arrayNewGames);
-    const { displayDropDown, setDisplayDropDown } = useDropDownContext();
+const NavigationButton: React.FC<NavigationButtonProps> = (props: NavigationButtonProps) => {
+    const [arrayToDropDown, setArrayToDropDown] =useState<string[]>([]);
+    const [displayDropDown, setDisplayDropDown] = useState(false);
+    const { setDropDown } = useDropDownContext();
 
     const showDropDown = () => {
         setDisplayDropDown(!displayDropDown);
     };
 
     useEffect(() => {
-        if (props.nameButton === 'new games') {
-            setArrayToDropDown(arrayNewGames);
-        }
-        if (props.nameButton === 'top games') {
-            setArrayToDropDown(arrayTopGames);
+        switch (props.nameButton) {
+            case NavigationMenu.NEW_GAMES:
+                setArrayToDropDown(arrayNewGames);
+                break;
+            case NavigationMenu.TOP_GAMES:
+                setArrayToDropDown(arrayTopGames);
+                break;
+            case NavigationMenu.FREE_GAMES:
+                setArrayToDropDown(arrayFreeGames);
+                break;
         }
     }, []);
+
+    useEffect(() => {
+        setDropDown({display: displayDropDown, array: arrayToDropDown});
+    }, [displayDropDown]);
 
     return (
         <>

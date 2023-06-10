@@ -1,20 +1,26 @@
 import React, { useState, useContext } from 'react';
 
+type DropDownType = {
+    display: boolean;
+    array: string[];
+}
+
 type DropDownContextType = {
-    setDisplayDropDown: (arg: boolean) => void;
-    displayDropDown: boolean;
+    setDropDown: (arg: DropDownType) => void;
+    dropDown: DropDownType;
 };
 
 const Context = React.createContext<DropDownContextType>({
-    setDisplayDropDown: () => false,
-    displayDropDown: false,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setDropDown: () => {},
+    dropDown: {display: false, array: []},
 
 });
 
 const DropDownContext = ({ children }: { children: JSX.Element }) => {
-    const [displayDropDown, setDisplayDropDown] = useState<boolean>(false);
+    const [dropDown, setDropDown] = useState<DropDownType>({display: false, array: []});
     return (
-        <Context.Provider value={{displayDropDown, setDisplayDropDown}}>
+        <Context.Provider value={{dropDown, setDropDown}}>
             {children}
         </Context.Provider>
     );

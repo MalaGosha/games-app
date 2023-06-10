@@ -5,12 +5,12 @@ type ContextTypeProps = {
     children: JSX.Element;
 };
 
-const ContextProvider: React.FC<ContextTypeProps> = (props: {
-    children: JSX.Element;
-}) => {
+const ContextProvider: React.FC<ContextTypeProps> = (props: {children: JSX.Element}) => {
     return (
         <>
-            <DropDownContext>{props.children}</DropDownContext>
+            <DropDownContext>
+                {props.children}
+            </DropDownContext>
         </>
     );
 };

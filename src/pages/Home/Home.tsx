@@ -6,12 +6,15 @@ import DropDownMenu from '../../components/Bar/DropDownMenu/DropDownMenu';
 import { useDropDownContext } from '../../context/DropDownContext';
 
 const Home: React.FC = () => {
-    const { displayDropDown } = useDropDownContext();
+    const { dropDown } = useDropDownContext();
 
     return (
         <div>
             <Bar />
-            {displayDropDown ? <DropDownMenu data={[]} /> : ''}
+            {dropDown.display 
+            ? <DropDownMenu 
+                data={dropDown.array} /> 
+            : ''}
             <MainContainer />
         </div>
     );

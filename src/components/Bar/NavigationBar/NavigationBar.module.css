@@ -1,5 +1,20 @@
 .NavigationBar {
     position: absolute;
-    width: 40%;
+    width: 80%;
     margin: 30px 30px 0px 150px;
+}
+
+.NavigationButtonName {
+    display: inline-block;
+    width: 20%;
+    margin: 8px 30px 0px 10px;
+    padding: 15px;
+    background: none;
+	color: inherit;
+	border: none;
+    font-size: 23px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
 }

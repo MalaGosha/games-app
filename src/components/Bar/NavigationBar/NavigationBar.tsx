@@ -5,12 +5,15 @@ import NavigationButton from '../NavigationButton/NavigationButton';
 const NavigationBar: React.FC = () => {
     return (
         <div className={classes.NavigationBar}>
-            <NavigationButton 
-                nameButton="top games" 
-            />
-            <NavigationButton 
-                nameButton="new games" 
-            />
+                <NavigationButton 
+                    nameButton="top games" 
+                />
+                <NavigationButton 
+                    nameButton="new games" 
+                />
+                <NavigationButton 
+                    nameButton="free games" 
+                />
         </div>
     );
 };
