@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 type DropDownType = {
     display: boolean;
-    array: string[];
+    options: string[];
 }
 
 type DropDownContextType = {
@@ -13,12 +13,12 @@ type DropDownContextType = {
 const Context = React.createContext<DropDownContextType>({
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     setDropDown: () => {},
-    dropDown: {display: false, array: []},
+    dropDown: {display: false, options: []},
 
 });
 
 const DropDownContext = ({ children }: { children: JSX.Element }) => {
-    const [dropDown, setDropDown] = useState<DropDownType>({display: false, array: []});
+    const [dropDown, setDropDown] = useState<DropDownType>({display: false, options: []});
     return (
         <Context.Provider value={{dropDown, setDropDown}}>
             {children}

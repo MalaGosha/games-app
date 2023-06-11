@@ -5,7 +5,7 @@ import classes from './PageNotFound.module.css';
 const PageNotFound: React.FC = () => {
 
     return (
-        <div>
+        <div className={classes.PageNotFoundContainer}>
             Paige not found
             <Link to="/">
                 <button className={classes.Btn__ReturnToMainPaige}>

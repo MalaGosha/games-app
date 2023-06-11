@@ -6,7 +6,7 @@ import Bar from '../../components/Bar/Bar';
 import DropDownMenu from '../../components/Bar/DropDownMenu/DropDownMenu';
 import { useDropDownContext } from '../../context/DropDownContext';
 
-const Home: React.FC = () => {
+const GameDescription: React.FC = () => {
     const { dropDown } = useDropDownContext();
 
     return (
@@ -21,4 +21,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default GameDescription;

@@ -1,6 +1,6 @@
 .DropDownContainer__Visibility {
     visibility: visible;
-    padding: 100px 50px 30px 30px;;
+    padding: 20px 50px 40px 50px;;
     width: auto;
     height: 300px;
     border-radius: 0px 0px 5px 5px;
@@ -12,16 +12,41 @@
 
 .DropDownContainer__Hidden {
     visibility: hidden;
-    height: 430px;
+    height: 340px;
 }
 
-.DropDownItem {
+.DropDownOptions {
+    margin-top: 40px;
+    width: 20%;
+    height: 80%;
+    float:left;
+}
+
+.DropDownOption {
     color: white;
     padding: 15px;
     font-size: 19px;
-    width: 12%;
+    width: 90%;
 }
 
-.DropDownItem:hover {
+.DropDownOption:hover {
     font-weight: bold;
+}
+
+.DropDownGamesPosters {
+    position: relative;
+    display: flex;
+    width: 70%;
+    margin: 20px 0px 20px 60px;
+}
+
+.DropDownGamePoster {
+    display: inline-block;
+    margin: 0px 0px 0px 30px;
+    width: 400px ;
+    box-shadow: 10px 5px 5px black;
+}
+
+.DropDownGamePoster:hover {
+    box-shadow: 18px 10px 10px black;
 }
